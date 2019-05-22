@@ -16,6 +16,7 @@ def train(dataset, point_net, image_net, optimizer):
 			pred = image_net(images)
 			loss = loss(pred, batch['y'])
 			optimizer.optimize(loss)
+			loss.backward()
 
 
 if __name__ == '__main__':
